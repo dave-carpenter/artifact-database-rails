@@ -9,19 +9,42 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/scan">Scan</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/search">Search</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/list">List</a>
-        </li>
-        <li class='nav-item'>
-          <a class="nav-link" href="/signup"> Sign Up</a>
-        </li>
+
+        <% if logged_in? %>
+
+          <li class="nav-item">
+            <%= link_to "Scan",     '/scan',    class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Search",   '/search',  class: "nav-link" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "List",     '/list',    class: "nav-link" %>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", current_user, class: "dropdown-item" %>
+              <%= link_to "Log out", logout_path, class: "dropdown-item", method: :delete %>
+            </div>
+          </li>
+
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log In",     '/login',    class: "nav-link" %>
+          </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
 </nav>
+
+<% if logged_in? %>
+  <h1><% current_user.name %></h1>
+<% end %>
