@@ -1,0 +1,21 @@
+<h2 class = text-center>All Artifacts</h2>
+<table style="width:100%">
+  <tr>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Department</th>
+      <th>Location</th>
+    </tr>
+  <%= @artifact.each do |artifact| %>
+    <tr>
+      <td><%= artifact.id %></td>
+      <td><%= artifact.name %></td>
+      <td><%= artifact.description %></td>
+      <td><%= artifact.department %></td>
+      <td><%= artifact.default_location %></td>
+      <td><a type="button" class="btn btn-primary text-center home-buttons" href="/scan"> Checkout</a> </td>
+    </tr>
+  <% end %>
+</table>

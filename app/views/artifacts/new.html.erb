@@ -1,0 +1,26 @@
+<h1>Create New Artifact</h1>
+<%= form_for :artifact, url: "/artifacts",method: "post" do |f| %>
+  <p>
+    <%= f.label :'Artifact Name' %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :'Description' %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.label :'Department' %><br>
+    <%= f.text_field :department %>
+  </p>
+
+  <p>
+    <%= f.label :'Original Location' %><br>
+    <%= f.text_field :default_location %>
+  </p>
+
+  <p>
+    <%= f.submit "Create Artifact"%>
+  </p>
+<% end %>
