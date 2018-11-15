@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181101214427) do
-
-  create_table "artifacts", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "department"
-    t.string "default_location"
-    t.string "current_location"
-    t.date "return_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20181029144300) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -29,6 +18,7 @@ ActiveRecord::Schema.define(version: 20181101214427) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
