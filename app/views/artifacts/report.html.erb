@@ -1,0 +1,22 @@
+<h2 class = text-center>Past Due Artifacts Report</h2>
+<table style="width:100%">
+    <tr>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Current Location</th>
+        <th>Return to</th>
+        <th>Return Date</th>
+      </tr>
+    <%= @artifact.each do |artifact| %>
+      <tr>
+        <td><%= artifact.id %></td>
+        <td><%= artifact.name %></td>
+        <td><%= artifact.current_location %></td>
+        <td><%= artifact.default_location %></td>
+        <td><%= artifact.return_date %></td>
+        <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
+        <td><%= link_to 'Check in', edit_artifact_path(artifact.id) %></td>
+      </tr>
+    <% end %>
+  </table>

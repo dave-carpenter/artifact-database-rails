@@ -4,18 +4,13 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Description</th>
-      <th>Department</th>
-      <th>Location</th>
     </tr>
   <%= @artifact.each do |artifact| %>
     <tr>
       <td><%= artifact.id %></td>
       <td><%= artifact.name %></td>
-      <td><%= artifact.description %></td>
-      <td><%= artifact.department %></td>
-      <td><%= artifact.default_location %></td>
-      <td><a type="button" class="btn btn-primary text-center home-buttons" href="/scan"> Checkout</a> </td>
+      <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
+      <td><%= link_to 'Checkout', edit_artifact_path(artifact.id) %></td>
     </tr>
   <% end %>
 </table>

@@ -17,9 +17,8 @@
 
   <p>
     <%= f.label :'Original Location' %><br>
-    <%= f.text_field :default_location %>
-  </p>
-
+    <%= f.collection_select :default_location, Artifact::LOCATIONS, :to_s, :to_s,
+          :include_blank => false %>  </p>
   <p>
     <%= f.submit "Create Artifact"%>
   </p>
