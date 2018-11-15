@@ -15,4 +15,25 @@
 //= require rails-ujs
 //= require popper
 //= require turbolinks
+
+//=require ./jsqrcode/grid.js
+//=require ./jsqrcode/version.js
+//=require ./jsqrcode/detector.js
+//=require ./jsqrcode/formatinf.js
+//=require ./jsqrcode/errorlevel.js
+//=require ./jsqrcode/bitmat.js
+//=require ./jsqrcode/datablock.js
+//=require ./jsqrcode/bmparser.js
+//=require ./jsqrcode/datamask.js
+//=require ./jsqrcode/rsdecoder.js
+//=require ./jsqrcode/gf256poly.js
+//=require ./jsqrcode/gf256.js
+//=require ./jsqrcode/decoder.js
+//=require ./jsqrcode/qrcode.js
+//=require ./jsqrcode/findpat.js
+//=require ./jsqrcode/alignpat.js
+//=require ./jsqrcode/databr.js
+//=require ./jsqrcode/customjs.js
+
+
 //= require_tree .

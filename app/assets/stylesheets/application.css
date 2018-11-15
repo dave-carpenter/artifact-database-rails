@@ -13,13 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.red-square{
-  width: 25px;
-  height: 25px;
-  Background-color: red;
-}
-.yellow-square{
-  width: 25px;
-  height: 25px;
-  Background-color: yellow;
-}
