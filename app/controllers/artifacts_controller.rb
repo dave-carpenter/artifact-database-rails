@@ -11,6 +11,12 @@ class ArtifactsController < ApplicationController
     @artifact = Artifact.find(params[:id])
   end
 
+  ##def checkin
+    #@artifact = Artifact.find(params[:id])
+    #@artifact.update(params.require(:current_location = nil, :return_date = nil))
+
+  #end
+
   def create
       artifact = Artifact.create(artifact_params)
       redirect_to "/artifacts/#{artifact.id}"
