@@ -1,18 +1,19 @@
 <h2><%= @artifact.name %></h2>
   <p>
-    Description:
+    <h3>Description:</h3>
     <%= @artifact.description %><br>
-    Department:
+    <h3>Department:</h3>
     <%= @artifact.department %><br>
-    Origin Location:
+    <h3>Origin Location:</h3>
     <%= @artifact.default_location %><br>
     <% if @artifact.current_location.present? %>
-      Current Location:
+      <h3>Current Location:</h3>
       <%= @artifact.current_location %><br>
     <% end %>
     <% if @artifact.return_date.present? %>
-      Return By:
+      <h3>Return By:</h3>
       <%= @artifact.return_date %><br>
     <% end %>
+    <br><br><br>
     <%= link_to 'Checkout', edit_artifact_path(@artifact.id) %>
   </p>
