@@ -15,12 +15,13 @@ gem 'jbuilder',     '2.7.0'
 gem 'coffee-script-source', '1.8.0'
 #https://stackoverflow.com/questions/51379326/current-execjs-runtime-doest-support-es6
 gem 'autoprefixer-rails', '8.6.5'
+gem 'rails_admin', '~> 1.3'
 
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
-  gem 'rails_admin', '~> 1.3'
+  #gem 'rails_admin', '~> 1.3'
 end
 
 group :development do
