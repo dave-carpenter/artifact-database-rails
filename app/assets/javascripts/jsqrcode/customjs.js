@@ -31,18 +31,12 @@ function tick() {
       console.log(result);
       document.getElementById("qr-results").innerHTML = result;
       /* Video can now be stopped */
-<<<<<<< HEAD
-      //video.pause();
-      //video.src = "";
-      //video.srcObject.getVideoTracks().forEach(track => track.stop());
-=======
       video.pause();
       video.src = "";
       video.srcObject.getVideoTracks().forEach(track => track.stop());
       var url = ( "/artifacts/" + result );
       console.log(url);
       window.location.href = url;
->>>>>>> Artifacts-CRUD
 
       /* Display Canvas and hide video stream */
       //qrCanvasElement.classList.remove("hidden");

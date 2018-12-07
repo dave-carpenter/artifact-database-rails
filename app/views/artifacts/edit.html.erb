@@ -1,0 +1,22 @@
+<h1>Checkout Artifact</h1>
+
+<%= form_with(model: @artifact, local: true) do |form| %>
+  <p>
+    <%= form.label :current_location %><br>
+    <%= form.collection_select :current_location, Artifact::LOCATIONS, :to_s, :to_s,
+          :include_blank => false %>
+
+  </p>
+
+  <p>
+    <%= form.label :return_date %><br>
+    <%= form.date_field :return_date %>
+  </p>
+
+  <p>
+    <%= form.submit "Checkout Artifact"%>
+  </p>
+
+<% end %>
+
+<%= link_to 'Back', artifact_path %>
