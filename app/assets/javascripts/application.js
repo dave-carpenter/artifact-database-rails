@@ -35,5 +35,8 @@
 //=require ./jsqrcode/databr.js
 //=require ./jsqrcode/customjs.js
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Artifacts-CRUD
 //= require_tree .
