@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     get   '/artifacts/search',   to: 'artifacts#search'
     get   '/artifacts/report',   to: 'artifacts#report'
-  #  post   'checkin'             to: 'artifacts#checkin'
+
     resources :artifacts
     resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
