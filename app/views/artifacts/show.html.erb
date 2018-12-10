@@ -9,12 +9,11 @@
     <% if @artifact.current_location.present? %>
       <h3>Current Location:</h3>
       <%= @artifact.current_location %><br>
+    <% end %>
+    <% if @artifact.return_date.present? %>
       <h3>Return By:</h3>
       <%= @artifact.return_date %><br>
-    <br><br><br>
-    <%= link_to 'Check-In', artifact_path(@artifact, current_location: "", return_date: ""), :method => :put %>
-    <% else %>
+    <% end %>
     <br><br><br>
     <%= link_to 'Checkout', edit_artifact_path(@artifact.id) %>
-    <% end %>
   </p>
