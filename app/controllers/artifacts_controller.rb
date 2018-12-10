@@ -11,11 +11,7 @@ class ArtifactsController < ApplicationController
     @artifact = Artifact.find(params[:id])
   end
 
-  ##def checkin
-    #@artifact = Artifact.find(params[:id])
-    #@artifact.update(params.require(:current_location = nil, :return_date = nil))
 
-  #end
 
   def create
       artifact = Artifact.create(artifact_params)
@@ -32,7 +28,7 @@ class ArtifactsController < ApplicationController
   end
 
   private def artifact_params
-    params.require(:artifact).permit(:name, :description, :department, :default_location, :current_location, :return_date)
+    params.permit(:name, :description, :department, :default_location, :current_location, :return_date)
   end
 
   def report
