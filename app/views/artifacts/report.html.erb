@@ -19,7 +19,7 @@
         <td><%= artifact.default_location %></td>
         <td><%= artifact.return_date %></td>
         <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
-        <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :method => :put %></td>
+        <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :action => check_in, :method => :put %></td>
       </tr>
     <% elsif artifact.return_date < Date.today-7.days %>
     <tr bgcolor = "yellow" >
@@ -29,7 +29,7 @@
       <td><%= artifact.default_location %></td>
       <td><%= artifact.return_date %></td>
       <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
-      <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :method => :put %></td>
+      <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :action => check_in, :method => :put %></td>
     </tr>
     <% else %>
     <tr>
@@ -39,7 +39,7 @@
       <td><%= artifact.default_location %></td>
       <td><%= artifact.return_date %></td>
       <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
-      <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :method => :put %></td>
+      <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :action => check_in, :method => :put %></td>
     </tr>
     <% end %>
     <% end %>

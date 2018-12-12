@@ -24,6 +24,15 @@ class ArtifactsController < ApplicationController
 
   def update
     @artifact = Artifact.find(params[:id])
+    if @artifact.update(artifact_params)
+      redirect_to @artifact
+    else
+      render 'checkout'
+    end
+  end
+
+  def check_in
+    @artifact = Artifact.find(params[:id])
     if @artifact.update(artifact_params_check_in)
       redirect_to @artifact
     else
@@ -32,7 +41,7 @@ class ArtifactsController < ApplicationController
   end
 
   private def artifact_params
-    params.require(:artifact).permit(:name, :description, :department, :default_location, :current_location, :return_date)
+    params.require(:artifact).permit(:name, :description, :department, :default_location, :current_location, :return_date, :times_moved)
   end
 
   private def artifact_params_check_in

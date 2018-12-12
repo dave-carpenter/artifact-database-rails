@@ -7,6 +7,7 @@ class CreateArtifacts < ActiveRecord::Migration[5.1]
       t.string :default_location
       t.string :current_location
       t.date :return_date
+	  t.integer :times_moved
 
       t.timestamps
     end
