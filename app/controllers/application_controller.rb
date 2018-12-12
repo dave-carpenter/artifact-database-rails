@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
 
 
   def login_required
-    flash[:danger] = "Log in to access this page"
-    redirect_to('/')  if current_user.blank?
+    if current_user.blank?
+      flash[:danger] = "Log in to access this page"
+      redirect_to('/')
+    end
   end
 end

@@ -17,6 +17,7 @@ gem 'coffee-script-source', '1.8.0'
 #https://stackoverflow.com/questions/51379326/current-execjs-runtime-doest-support-es6
 gem 'autoprefixer-rails', '8.6.5'
 gem 'rails_admin', '~> 1.3'
+gem 'hairtrigger'
 
 
 group :development, :test do
