@@ -12,7 +12,7 @@
       <h3>Return By:</h3>
       <%= @artifact.return_date %><br>
     <br><br><br>
-    <%= link_to 'Check-In', artifact_path(@artifact, current_location: "", return_date: ""), :method => :put %>
+    <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :action => check_in, :method => :put %></td>
     <% else %>
     <br><br><br>
     <%= link_to 'Checkout', edit_artifact_path(@artifact.id) %>

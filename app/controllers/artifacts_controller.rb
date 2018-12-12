@@ -25,7 +25,11 @@ before_action :login_required, :only => [:index, :new, :edit, :create, :update, 
     @artifact = Artifact.find(params[:id])
   end
 
+  ##def checkin
+    #@artifact = Artifact.find(params[:id])
+    #@artifact.update(params.require(:current_location = nil, :return_date = nil))
 
+  #end
 
   def create
       artifact = Artifact.create(artifact_params)
@@ -41,8 +45,21 @@ before_action :login_required, :only => [:index, :new, :edit, :create, :update, 
     end
   end
 
+  def check_in
+    @artifact = Artifact.find(params[:id])
+    if @artifact.update(artifact_params_check_in)
+      redirect_to @artifact
+    else
+      render 'checkout'
+    end
+  end
+
   private def artifact_params
-    params.permit(:name, :description, :department, :default_location, :current_location, :return_date)
+    params.require(:artifact).permit(:name, :description, :department, :default_location, :current_location, :return_date, :times_moved)
+  end
+
+  private def artifact_params_check_in
+    params.permit(:current_location, :return_date)
   end
 
   def report

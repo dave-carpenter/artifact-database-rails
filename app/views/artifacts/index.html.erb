@@ -6,21 +6,20 @@
       <th>Name</th>
     </tr>
     <%= @artifact.each do |artifact| %>
-    <% if artifact.return_date.present? %>
-      <tr>
-        <td><%= artifact.id %></td>
-        <td><%= artifact.name %></td>
-        <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
-        <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :method => :put %></td>
-      </tr>
-    <% else %>
-      <tr>
-        <td><%= artifact.id %></td>
-        <td><%= artifact.name %></td>
-        <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
-        <td><%= link_to 'Checkout', edit_artifact_path(artifact.id) %></td>
-      </tr>
-    <% end %>
-    <% end %>
-
+      <% if artifact.return_date.present? %>
+        <tr>
+          <td><%= artifact.id %></td>
+          <td><%= artifact.name %></td>
+          <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
+          <td><%= link_to 'Check-In', artifact_path(artifact, current_location: "", return_date: ""), :action => check_in, :method => :put %></td>
+        </tr>
+      <% else %>
+        <tr>
+          <td><%= artifact.id %></td>
+          <td><%= artifact.name %></td>
+          <td><%= link_to 'Details', artifact_path(artifact.id) %></td>
+          <td><%= link_to 'Checkout', edit_artifact_path(artifact.id) %></td>
+        </tr>
+      <% end %>
+      <% end %>
 </table>
